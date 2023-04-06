@@ -39,15 +39,20 @@ export default function Timer({
                 resetTimer()
                 resetControls()
                 return
-            }
+            } 
+
+            if (typeof minutes === 'number' && isNaN(minutes)) {
+                hold()
+                resetControls() 
+                setTime()
+                return
+            } 
 
             if(seconds <= 0 ){
                 seconds = 60
                 updateDisplay(--minutes, seconds)
             }
-
-            updateDisplay(minutes, --seconds)
-
+            updateDisplay(minutes, --seconds)     
             countdown()
         }, 1000)
     }
@@ -92,9 +97,13 @@ export default function Timer({
     }
 
     function setTime() {
-        newMinutes = prompt("Quantos minutos?")
-        updateDisplay(newMinutes, seconds)
-        minutes = newMinutes
+        newMinutes = prompt("Insira o tempo de estudo:")
+        if (newMinutes === null || newMinutes === undefined || newMinutes === NaN) {
+            return
+        } else {
+            updateDisplay(newMinutes, seconds)
+            minutes = newMinutes
+        }
     }
 
     function resetControls() {

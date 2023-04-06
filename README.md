@@ -49,7 +49,7 @@
 Code improvements:
 - There were made improvements on the code to keep it more clean and visual. Following rules of Clean Code.
 
-</br>
+
 Project made in Rocketseat's course "Explorer".
 </br>
 The layout was sent via Figma.

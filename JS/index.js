@@ -57,6 +57,7 @@ buttonPlay.addEventListener("click", function(){
     buttonPause.classList.remove("hide") 
     buttonSetTime.classList.add("hide")
     buttonStop.classList.remove("hide") 
+    
     sounds.pressButtonAudio()
     timer.countdown()
 })
